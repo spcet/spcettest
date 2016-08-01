@@ -1,0 +1,1 @@
+json.array! @unitmarks, partial: 'unitmarks/unitmark', as: :unitmark

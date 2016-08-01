@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  semester_id: 
+  student_id: 
+  date: 2016-08-01
+  subject: MyString
+  attended: false
+
+two:
+  semester_id: 
+  student_id: 
+  date: 2016-08-01
+  subject: MyString
+  attended: false

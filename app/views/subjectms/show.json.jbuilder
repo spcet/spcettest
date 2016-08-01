@@ -1,0 +1,1 @@
+json.partial! "subjectms/subjectm", subjectm: @subjectm

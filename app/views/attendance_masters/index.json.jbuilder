@@ -1,0 +1,1 @@
+json.array! @attendance_masters, partial: 'attendance_masters/attendance_master', as: :attendance_master

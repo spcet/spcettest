@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  role: MyString
+  actor: MyString
+  path: MyString
+
+two:
+  username: MyString
+  role: MyString
+  actor: MyString
+  path: MyString

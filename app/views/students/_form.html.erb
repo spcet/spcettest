@@ -1,0 +1,239 @@
+<script type="text/javascript">
+  
+
+var myApp = angular.module('myApp',[]);
+
+function MyCtrl($scope, $window) {
+      MyCtrl.prototype.$scope = $scope;
+}
+
+MyCtrl.prototype.setFile = function(element) {
+    var $scope = this.$scope;
+    $scope.$apply(function() {
+        $scope.theFile = element.files[0];
+    });
+};
+
+</script>
+
+
+
+<body ng-app="myApp">
+<div id="content" ng-controller="MyCtrl">
+
+
+
+
+
+
+      
+    <div class="section-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body "> 
+              <div id="rootwizard1" class="form-wizard form-wizard-horizontal">
+              <%= form_for(@student,html:{:multipart=>true,:class=>"form floating-label"}) do |f| %>
+
+                
+                  <div class="form-wizard-nav">
+                    <div class="progress"><div class="progress-bar progress-bar-primary"></div></div>
+                    <ul class="nav nav-justified">
+<li class="active"><a href="index.htm#tab1" data-toggle="tab"><span class="step">1</span> <span class="title">Basic Information</span></a></li>
+<li><a href="index.htm#tab2" data-toggle="tab"><span class="step">2</span> <span class="title">Other Information</span></a></li>
+<li><a href="index.htm#tab3" data-toggle="tab"><span class="step">3</span> <span class="title">Contact and Education</span></a></li>
+<li><a href="index.htm#tab4" data-toggle="tab"><span class="step">4</span> <span class="title">Confirm</span></a></li>
+                    </ul>
+                  </div>
+                  <div class="tab-content clearfix">
+                    <div class="tab-pane active" id="tab1">
+                      <br/><br/>
+                      <div class="form-group">
+                        
+                            <%= f.text_field :name,:class=>"form-control",:ng_model=>"name" %>
+                            <%= f.label :name %>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <div class="form-group">
+                            <%= f.text_field :regno,:class=>"form-control",:ng_model=>"regno" %>
+                            
+                            <label for="no" class="control-label">Roll No</label>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group floating-label">
+                  <%= f.collection_select(:dept_id,Dept.all,:id,:name,{},{:class=>"form-control",:ng_model=>"d"}) %>
+
+                  <label for="select2">Select Department </label>
+                </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="form-group floating-label">
+                  <%= f.collection_select(:batch_id,Batch.all,:id,:year,{},{:class=>"form-control",:ng_model=>"b"}) %>
+
+                  <label for="select2">Select Class</label>
+                </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                      <br/><br/>
+            <div class="form-group">
+            <%= f.date_field :dob,:class=>"form-control",:ng_model=>"dob"%>
+
+        <label for="dob" class="control-label">Date of Birth</label>
+            </div>
+            
+            <div class="form-group floating-label">
+                        <%=f.select :gender,options_for_select(["Male","Female","Others"]),{},:class=>"form-control",:ng_model=>"g"%>
+                  
+                  <label for="Gender">Gender</label>
+                </div>
+            <div class="form-group">
+            <%= f.text_field :fathersname,:class=>"form-control",:ng_model=>"fathersname" %>
+
+        <label for="fname" class="control-label">Father's Name</label>
+            </div>
+            
+      <div class="form-group">
+            <%= f.text_field :fathersoccupiton,:class=>"form-control",:ng_model=>"fathersoccupiton" %>
+
+        <label for="fname" class="control-label">Father's Occupiton</label>
+            </div>
+            
+
+
+
+            <div class="form-group">
+          <%= f.text_field :community,:class=>"form-control",:ng_model=>"community" %>
+
+        <label for="comm" class="control-label">Community</label>
+            </div>
+            <div class="form-group">
+            <%= f.text_field :religionn,:class=>"form-control",:ng_model=>"religionn" %>
+        <label for="reli" class="control-label">Religion </label>
+            </div>
+            <div class="form-group">
+            <%= f.select :blood ,options_for_select(["O−","O+","A−","A+","B−","B+","AB−","AB+"]),{},:class=>"form-control",:ng_model=>"blood"%>
+
+        <label for="Blood" class="control-label">Blood Group</label>
+            </div>
+            <div class="form-group">
+        <%= f.text_field :addr2,:class=>"form-control",:ng_model=>"addr2" %>
+        <label for="paddr" class="control-label">Permenent Address</label>
+            </div>
+            <div class="form-group">
+      <%= f.text_field :pmobile,:class=>"form-control",:ng_model=>"pmobile"%>
+        <label for="pnum" class="control-label">Parents Number</label>
+            </div>
+
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                      <br/><br/>
+            <div class="form-group">
+            
+            <input name="student[email]" ng-model="email"class="form-control"></input>
+
+        <label for="student[email]" class="control-label">E-Mail</label>
+            </div>
+            <div class="form-group">  
+              <%= f.text_field :mobile,:class=>"form-control",:ng_model=>"mobile"%>
+
+        <label for="penum" class="control-label">Personal Number</label>
+            </div>
+            <div class="form-group">
+            <%= f.text_field :addr1,:class=>"form-control",:ng_model=>"addr1" %>
+
+        <label for="caddr" class="control-label">Current Address</label>
+            </div>
+      <div class="form-group">
+          <%= f.check_box :dote,:class=>"form-control",:ng_model=>"dote"%>
+  
+          <%= f.label :dote %>
+    
+        </div>
+      <div class="form-group" >
+        <input class="form-control" type="file" name="student[path]"></input> 
+          <%= f.label "Profile Image" %>
+    
+        </div>
+
+
+                    </div>
+                                        
+                    <div class="tab-pane text-center" id="tab4">
+                      <br/><br/>
+                      <h1>{{name}}</h1>
+          <h3>{{regno}} - {{d}} - {{b}}</h3>
+<h3>Date of Birth : {{dob}}</h3>
+              <h3>Gender : {{g}}</h3>
+              <h3>Father's Name : {{fathersname}}</h3>
+              <h3>Father's Occupation : {{fathersoccupiton}}</h3>
+              <h3>Community : {{community}}</h3>
+              <h3>Religion : {{religionn}}</h3>
+              <h3>Blood Group : {{blood}}</h3>
+              <h3>Dote :{{dote}}</h3>
+              <h3>Permenent Address : {{addr1}}</h3>
+              
+              <h3>Parents Number : {{pmobile}}</h3>
+              <h3>E-Mail : {{email}}</h3>
+              <h3>Personal Number : {{mobile}}</h3>
+        <h3>Current Address : {{addr2}}</h3>
+
+            <h1>{{theFile.name}}</h1>
+
+            <img src="{{theFile.name}}">
+
+        
+                                     <%= f.submit "Add Student",:class=>"btn btn-block ink-reaction btn-raised btn-primary" %>
+                    </div>
+                                        
+                  </div>
+                  <ul class="pager wizard">
+                    <li class="previous first"><a class="btn-raised" href="javascript:void(0);">First</a></li>
+                    <li class="previous"><a class="btn-raised" href="javascript:void(0);">Previous</a></li>
+                    <li class="next last"><a class="btn-raised" href="javascript:void(0);">Last</a></li>
+                    <li class="next"><a class="btn-raised" href="javascript:void(0);">Next</a></li>
+                  </ul>
+                <%end%>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+               
+                </div>
+            </div>
+    </div>
+    </div>
+
+    
+
+</div>
+
+</body>
+
+<script src="/assets/libs/jquery/jquery-1.11.2.min.js"></script>
+<script src="/assets/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script src="/assets/libs/bootstrap/bootstrap.min.js"></script>
+<script src="/assets/libs/spin.js/spin.min.js"></script>
+<script src="/assets/libs/autosize/jquery.autosize.min.js"></script>
+<script src="/assets/libs/moment/moment.min.js"></script>
+<script src="/assets/1.js"></script>
+<script src="/assets/2.js"></script>
+<script src="/assets/3.js"></script>
+<script src="/assets/libs/jquery-knob/jquery.knob.min.js"></script>
+<script src="/assets/libs/sparkline/jquery.sparkline.min.js"></script>
+<script src="/assets/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+<script src="/assets/libs/fullcalendar/fullcalendar.min.js"></script>
+<script src="/assets/libs/rickshaw/rickshaw.min.js"></script>
+<script src="/assets/libs/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+
+<script src="/assets/d/d.js"></script>
+<script src="/assets/d/dFormWizard.js"></script>

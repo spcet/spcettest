@@ -1,0 +1,1 @@
+json.partial! "attendance_masters/attendance_master", attendance_master: @attendance_master

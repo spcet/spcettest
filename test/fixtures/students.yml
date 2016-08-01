@@ -1,0 +1,61 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  regno: MyString
+  dept_id: 
+  batch_id: 
+  user_id: 
+  hoa: 1
+  sa: 1
+  hoal: MyString
+  sal: MyString
+  dob: 2016-07-31
+  gender: MyString
+  fathersname: MyString
+  guardian: MyString
+  community: MyString
+  religionn: MyString
+  tenth: 1
+  twelth: 1
+  fathersoccupiton: MyString
+  identification: MyString
+  blood: MyString
+  dote: false
+  mobile: MyString
+  pmobile: MyString
+  addr1: MyString
+  addr2: MyString
+  mark: MyString
+  ten: MyString
+  two: MyString
+
+two:
+  name: MyString
+  regno: MyString
+  dept_id: 
+  batch_id: 
+  user_id: 
+  hoa: 1
+  sa: 1
+  hoal: MyString
+  sal: MyString
+  dob: 2016-07-31
+  gender: MyString
+  fathersname: MyString
+  guardian: MyString
+  community: MyString
+  religionn: MyString
+  tenth: 1
+  twelth: 1
+  fathersoccupiton: MyString
+  identification: MyString
+  blood: MyString
+  dote: false
+  mobile: MyString
+  pmobile: MyString
+  addr1: MyString
+  addr2: MyString
+  mark: MyString
+  ten: MyString
+  two: MyString

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @unitmark.student %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @unitmark.subject %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @unitmark.unit %>
+</p>
+
+<p>
+  <strong>Mark:</strong>
+  <%= @unitmark.mark %>
+</p>
+
+<%= link_to 'Edit', edit_unitmark_path(@unitmark) %> |
+<%= link_to 'Back', unitmarks_path %>

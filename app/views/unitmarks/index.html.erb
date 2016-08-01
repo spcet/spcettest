@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Unitmarks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Subject</th>
+      <th>Unit</th>
+      <th>Mark</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unitmarks.each do |unitmark| %>
+      <tr>
+        <td><%= unitmark.student %></td>
+        <td><%= unitmark.subject %></td>
+        <td><%= unitmark.unit %></td>
+        <td><%= unitmark.mark %></td>
+        <td><%= link_to 'Show', unitmark %></td>
+        <td><%= link_to 'Edit', edit_unitmark_path(unitmark) %></td>
+        <td><%= link_to 'Destroy', unitmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unitmark', new_unitmark_path %>

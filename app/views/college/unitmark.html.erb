@@ -1,0 +1,82 @@
+<script type="text/javascript">
+	
+
+var app=angular.module('attendance',[])		
+app.controller('att', function($scope) {
+$scope.subjects=<%=@subject.to_json.html_safe%>
+$scope.name={}
+$scope.name.semester=<%=params[:id]%>
+
+$scope.contacts = <%=@list.to_json.html_safe%>;
+
+
+
+
+$scope.check = function(k){
+        var allChecked = k;
+        if (allChecked ==false){
+            for(i = 0; i< $scope.contacts.length; i++){
+                $scope.contacts[i].attended = false;
+            }
+        }else{
+            for(i = 0; i< $scope.contacts.length; i++){
+                $scope.contacts[i].attended = true;
+            }    
+        }
+    }
+});
+
+</script>
+
+
+
+<div id="content" ng-app="attendance" ng-controller="att">
+
+{{subjects}}
+	<input type="date" ng-model="name.date"></input>
+
+	<table>
+		<thead>
+			<th>
+				Regno
+			</th>
+			<th>
+				Name
+			</th>
+			<th ng-repeat="i in subjects">
+				{{i.name}}
+			</th>
+			
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="student in contacts">
+				<td>
+					{{student.regno}}
+				</td>
+				<td>				{{student.name}}</td>
+				<td ng-repeat="subject in student">
+				{{subject.name}}
+					<input type="checkbox" ng-model="subject.mk">
+						
+					</input>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+<%= form_for("college",url: {controller:"college",action: "calattend"})do |f| %>
+
+	    <%= f.text_field :head ,:value=>"{{name}}"%>
+	    
+	    <%= f.text_field :body ,:value=>"{{contacts}}"%>
+
+
+    <%= f.submit "Submit" ,:class=>"btn btn-block ink-reaction btn-raised btn-primary"%>
+<% end %>
+
+
+</div>
+

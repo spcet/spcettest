@@ -1,0 +1,44 @@
+
+
+
+
+
+
+
+<div id="content">
+      
+    <div class="section-body">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <%= form_for(@admin, html: { multipart: true,class:"form floating-label" } ) do |f| %>
+                <div class="form-group floating-label">
+                    <%= f.text_field :name,:class=>"form-control" %>
+                  <label for="admin[name]" class="form-control">Admin Name</label>
+                </div>
+
+<div class="form-group floating-label">
+  
+              <input type="email"name='admin[email]' class="form-control"></input>  
+              <label for="admin[email]" class="form-control">Email</label>
+</div>
+<div class="form-group floating-label">
+  
+              <input type="file"name='admin[path]' class="form-control"></input>  
+              <label for="admin[path]" class="form-control">Profile Photo</label>
+</div>
+
+                <%= f.submit 'Add Admin',:class=>"btn btn-block ink-reaction btn-raised btn-primary"%>
+              <% end %>
+
+            </div>
+          </div></div>
+            </div>
+    </div>
+    </div>
+    
+
+</div>
+

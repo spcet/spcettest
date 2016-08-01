@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @attendance_master.semester %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @attendance_master.date %>
+</p>
+
+<p>
+  <strong>Today:</strong>
+  <%= @attendance_master.today %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @attendance_master.subject %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @attendance_master.total %>
+</p>
+
+<%= link_to 'Edit', edit_attendance_master_path(@attendance_master) %> |
+<%= link_to 'Back', attendance_masters_path %>

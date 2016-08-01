@@ -1,0 +1,2 @@
+json.extract! student, :id, :name, :regno, :dept_id, :batch_id, :user_id, :hoa, :sa, :hoal, :sal, :dob, :gender, :fathersname, :guardian, :community, :religionn, :tenth, :twelth, :fathersoccupiton, :identification, :blood, :dote, :mobile, :pmobile, :addr1, :addr2, :mark, :ten, :two, :created_at, :updated_at
+json.url student_url(student, format: :json)

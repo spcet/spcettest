@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @classroom.name %>
+</p>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @classroom.dept %>
+</p>
+
+<p>
+  <strong>Batch:</strong>
+  <%= @classroom.batch %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @classroom.completed %>
+</p>
+
+<%= link_to 'Edit', edit_classroom_path(@classroom) %> |
+<%= link_to 'Back', classrooms_path %>

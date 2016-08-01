@@ -1,0 +1,1 @@
+json.array! @subjectms, partial: 'subjectms/subjectm', as: :subjectm

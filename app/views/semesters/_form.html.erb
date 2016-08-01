@@ -1,0 +1,32 @@
+
+
+
+<div id="content">
+      
+    <div class="section-body">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <%= form_for(@semester,html:{:class=>"form floating-label"}) do |f| %>
+                <div class="form-group floating-label">
+                      <%= f.text_field :name ,:class=>"form-control"%>
+                  <label for="classroom[name]">Semester Name</label>
+                </div><div class="form-group floating-label">
+                  <%= f.collection_select(:classroom_id,Classroom.all,:id,:name,{},{:class=>"form-control"})%>
+
+                  <label for="select2">Select Class</label>
+                </div>
+
+
+    <%= f.submit 'Add Semester',:class=>"btn btn-block ink-reaction btn-raised btn-primary"%>
+              <%end%>
+            </div>
+          </div></div>
+            </div>
+    </div>
+    </div>
+    
+
+</div>
