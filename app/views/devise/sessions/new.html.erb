@@ -1,26 +1,114 @@
-<h2>Log in</h2>
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <title>Welcome | COMPASS</title>
+   <script src="/assets/jquery-1.10.2.min.js"></script>
+    
+    <link rel="shortcut icon" href="favicon.png">
+    <link rel="icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="/assets/fonts/roboto_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+<!--    <link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="/assets/css/materialize.min.css" rel="stylesheet">
+    <link href="/assets/css/style1.css" rel="stylesheet">
+    <link href="/assets/mystyle.css" rel="stylesheet">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+<style type="text/css">
+  .logobg{background: url(/assets/hero.jpg) no-repeat center center; background-size: cover;}
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+</style>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
+<!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <section style=" padding: 0;">
+        <div class="container-fluid" style=" padding: 0;">
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="col m12 s12 logobg">
+            <div class="col m7 s12">
+            <div class="smshead" style="padding-top: 20px;">C O M P A S S</div>
+            <div class="card grey lighten-4 newsbox">
+            <div class="recent">Recent News &amp; Events</div>
+               <hr>
+                <div class="news">
+                <div class="date">23, January</div>
+                <div class="newstitle">National Conference on Information and Intelligent Technologies NCIIT'16 - IT Dept.</div>
+                </div>
+                        <div class="news">
+                        <div class="date">12, January</div>
+                        <div class="newstitle">One Conference on Information and Day Hands-on Training on - Mechanical Dept.</div>
+                        </div>
+                        <div class="news">
+                        <div class="date">2, January</div>
+                        <div class="newstitle">National Conference on Application of Nano
+technology - B.E. Civil Dept.</div>
+                        </div>
+                        <div class="news">
+                        <div class="date">23, December</div>
+                        <div class="newstitle">National Conference on Application of Nano
+technology - B.E. Civil Dept.</div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col m5 s12">
+                             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <li class="input-field">
+                  <input placeholder="Username" name="user[email]"id="Username" type="text" class="validate">
+        </li>
+        <li class="input-field">
+          <input placeholder="Password" name="user[password]" id="password" type="password" class="validate">
+        </li>
+        
+        
+<!--<div class="submit"><input type="submit" onclick="" value="Sign In" ></div>-->
+<button class="btn waves-effect waves-light submit" type="submit" name="action">
+sign in</button>
+        
+        
+<div class="switch check"><label class="check"><% if devise_mapping.rememberable? -%>
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+      
   <% end -%>
+      <span class="lever"></span>Remember Me</label></div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+<!--   <input id="box1" type="checkbox"/><label class="check" for="box1">Remember Me</label>-->
+   
+        <div class="fpass">
+        <a href="#">Forgot Password?</a></div>
+        <%end%>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+        <div class="container-fluid">
+            <div class="row" style="margin-bottom: 0px;">
+                <div class="col-md-12">
+                    <ul class="flist">
+                        <li class="li"><a href="#" class="waves-effect waves-teal btn-flat">Free Demo</a></li>
+                        <li class="li"><a href="#" class="waves-effect waves-teal btn-flat">Help</a></li>
+                        <li class="li"><a href="#" class="waves-effect waves-teal btn-flat">Github</a></li>
+                        <li class="li"><a href="#" class="waves-effect waves-teal btn-flat">Core Team</a></li>
+                        <li class="li"><a href="#" class="waves-effect waves-teal btn-flat">Contact</a></li>
+                        <li class="li"><a href="#" class="waves-effect waves-teal btn-flat">Features</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+   <script src="/assets/jquery-1.10.2.min.js"></script>
+   <script src="/assets/materialize.min.js"></script>
+    <script type="text/javascript">$(".logobg").css("min-height", $(window).height());</script>
+  </body>
+</html>
+
 
 <%= render "devise/shared/links" %>

@@ -1,0 +1,17 @@
+/*Dashboard Page*/
+
+.date{
+    font-size: 18px;
+}
+.newstitle{
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+.pdate{
+    font-size: 28px;
+    color: red;
+}
+.adate{
+    font-size: 28px;
+    color: green;
+}
